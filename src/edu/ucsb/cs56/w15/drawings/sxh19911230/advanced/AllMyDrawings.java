@@ -31,8 +31,9 @@ public class AllMyDrawings
 
     public static void drawPicture1(Graphics2D g2) {
 
-	House h1 = new House(100,250,50,75);
-	g2.setColor(Color.CYAN); g2.draw(h1);
+	Pencil h1 = new Pencil(50,200,300);
+	g2.setColor(Color.CYAN);
+	g2.draw(h1);
 	
 	// Make a black house that's half the size, 
 	// and moved over 150 pixels in x direction
@@ -60,8 +61,8 @@ public class AllMyDrawings
 	
 	// Draw two houses with Windows
 	
-	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
-	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
+	PencilWithEraser hw1 = new PencilWithEraser(50,30,400);
+	PencilWithEraser hw2 = new PencilWithEraser(100,30,200);
 	
 	g2.draw(hw1);
 	g2.setColor(new Color(0x8F00FF)); g2.draw(hw2);
@@ -70,7 +71,7 @@ public class AllMyDrawings
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("A few houses by Phill Conrad", 20,20);
+	g2.drawString("A few pencils by Xianghong Sun", 20,20);
     }
 
 
@@ -90,7 +91,7 @@ public class AllMyDrawings
 	g2.setColor(Color.BLUE);    g2.draw(tallSkinny);
 	g2.setColor(Color.MAGENTA); g2.draw(shortFat);
 	
-	House h1 = new House(100,250,50,75);
+	Pencil h1 = new Pencil(100,250,500);
 	g2.setColor(Color.CYAN); g2.draw(h1);
 	
 	// Make a black house that's half the size, 
@@ -118,8 +119,8 @@ public class AllMyDrawings
 	
 	// Draw two houses with Windows
 	
-	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
-	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
+	PencilWithEraser hw1 = new PencilWithEraser(50,30,400);
+	PencilWithEraser hw2 = new PencilWithEraser(300,30,300);
 	
 	g2.draw(hw1);
 	g2.setColor(new Color(0x8F00FF)); 
@@ -133,7 +134,7 @@ public class AllMyDrawings
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("A bunch of Coffee Cups and a few houses by Phill Conrad", 20,20);
+	g2.drawString("A bunch of Coffee Cups and a few Pencils by Phill Conrad and Xianghong Sun", 20,20);
     }
   
     /** Draw a different picture with a few houses and coffee cups
