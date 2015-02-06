@@ -147,13 +147,16 @@ public class AllMyDrawings
 
 	
 	// Draw some coffee cups.
-	
+	/*
        CoffeeCup large = new CoffeeCup(100,50,225,150);
        CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
        
        g2.setColor(Color.RED);     g2.draw(large);
-       g2.setColor(Color.GREEN);   g2.draw(smallCC);
-       
+       g2.setColor(Color.GREEN);   g2.draw(smallCC);*/
+
+       Sweatshirt s = new Sweatshirt(20,20,10,10);
+       g2.draw(s);
+
        
     }
     
