@@ -1,16 +1,10 @@
 package edu.ucsb.cs56.w15.drawings.jdogg5566.advanced;
-import java.awt.geom.GeneralPath; // combinations of lines and curves
-import java.awt.geom.AffineTransform; // translation, rotation, scale
 import java.awt.Shape; // general class for shapes
 
 // all imports below this line needed if you are implementing Shape
-import java.awt.geom.Point2D; 
-import java.awt.geom.Line2D; 
-import java.awt.geom.Rectangle2D.Double;
-import java.awt.geom.Ecllipse2D.Double;
+import java.awt.geom.*;
 import java.awt.Rectangle;
-import java.awt.geom.PathIterator;
-import java.awt.geom.AffineTransform;
+
 
 import edu.ucsb.cs56.w15.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
@@ -42,7 +36,7 @@ public class Sweatshirt extends GeneralPathWrapper implements Shape {
         double rightArmX = x + .5*tWidth; // x coord of the right arm
         double leftArmx = x - .5*tWidth; // x coord of the left arm
         double circleCenterX = x;
-        double circleCenterY = y + 1.25*tHeight;
+        double circleCenterY = y - 1.25*tHeight;
         double circleRadius = tWidth * .25;
 
         Rectangle2D.Double torso =
@@ -54,15 +48,16 @@ public class Sweatshirt extends GeneralPathWrapper implements Shape {
         Rectangle2D.Double rightArm = 
             new Rectangle2D.Double();
 
-        Ecllipse2D.Double hood = 
-            new Ecllipse2D.Double(circleCenterX,circleCenterY,circleRadius);
+        Ellipse2D.Double hood = 
+            new Ellipse2D.Double(circleCenterX,circleCenterY,circleRadius,circleRadius);
 
         GeneralPath wholeSweatshirt = this.get();
-        wholeSweatshirt.append(torso);
-        wholeSweatshirt.append(leftArm);
-        wholeSweatshirt.append(rightArm);
-        wholeSweatshirt.append(hood);
+        wholeSweatshirt.append(torso, false);
+        wholeSweatshirt.append(leftArm, false);
+        wholeSweatshirt.append(rightArm, false);
+        wholeSweatshirt.append(hood, false);
 
+        this.set(wholeSweatshirt);
     }
 
 }

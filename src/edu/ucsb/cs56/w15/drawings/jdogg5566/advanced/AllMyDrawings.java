@@ -154,7 +154,7 @@ public class AllMyDrawings
        g2.setColor(Color.RED);     g2.draw(large);
        g2.setColor(Color.GREEN);   g2.draw(smallCC);*/
 
-       Sweatshirt s = new Sweatshirt(20,20,10,10);
+       Sweatshirt s = new Sweatshirt(20,20,100,60);
        g2.draw(s);
 
        
