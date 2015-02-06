@@ -30,7 +30,7 @@ public class Shield extends GeneralPathWrapper implements Shape
 
     
     /**
-     * Constructor for objects of class CoffeeCup
+     * Constructor for objects of class Shield
      */
     public Shield(double x, double y, double width, double height)
     {
@@ -50,19 +50,19 @@ public class Shield extends GeneralPathWrapper implements Shape
        
         leftSide.moveTo(100,100);
         leftSide.lineTo(100,550);
-        leftSide.lineTo(200,700);
+        leftSide.lineTo(150,700);
         
         GeneralPath top = new GeneralPath();
        
         top.moveTo(100,100);
-        top.lineTo(300,100); // top of shield
+        top.lineTo(200,100); // top of shield
         
         Shape rightSide = ShapeTransforms.horizontallyFlippedCopyOf(leftSide);
        
         // after flipping around the upper left hand corner of the
         // bounding box, we move this over to the right by 200 pixels
        
-        rightSide = ShapeTransforms.translatedCopyOf(rightSide, 200.0, 0.0);
+        rightSide = ShapeTransforms.translatedCopyOf(rightSide, 100.0, 0.0);
        
         // now we put the whole thing together ino a single path.
        
