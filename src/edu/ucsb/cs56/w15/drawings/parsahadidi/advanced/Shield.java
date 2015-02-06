@@ -21,7 +21,7 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
    drawn anywhere, with any width or height.
    
       
-   @author Parsa Hadidi 
+   @author Parsa Hadidi
    @version for CS56, W15, UCSB, 02/3/2015
    
 */

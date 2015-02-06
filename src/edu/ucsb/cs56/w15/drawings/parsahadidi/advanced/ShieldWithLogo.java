@@ -16,8 +16,8 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 /**
    A Shield
       
-   @author Phill Conrad 
-   @version for CS56, W11, UCSB, 02/23/2011
+   @author Parsa Hadidi
+   @version for CS56, W15, UCSB, 02/3/2015
    
 */
 public class ShieldWithLogo extends Shield implements Shape
