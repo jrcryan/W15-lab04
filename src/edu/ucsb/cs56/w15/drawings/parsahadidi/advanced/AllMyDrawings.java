@@ -39,7 +39,7 @@ public class AllMyDrawings
 	g2.setColor(Color.RED);
 	g2.draw(medium);
 
-	Shield small = new Shield(225,225,40,75);
+	ShieldWithLogo small = new ShieldWithLogo(225,225,40,75);
 	Shape smallR = ShapeTransforms.rotatedCopyOf(small, Math.PI);
 	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);
 	g2.setStroke(thick);
@@ -55,8 +55,8 @@ public class AllMyDrawings
     public static void drawPicture2(Graphics2D g2) {
 	
 	Shield green = new Shield(75,100,60,30);
-	Shield blue = new Shield(150,300,90,50);
-	Shield magenta = new Shield(100,200,150,90);
+	ShieldWithLogo blue = new ShieldWithLogo(150,300,90,50);
+	ShieldWithLogo magenta = new ShieldWithLogo(100,200,150,90);
 	
 	g2.setColor(Color.GREEN);   g2.draw(green);
 	g2.setColor(Color.BLUE);    g2.draw(blue);
@@ -104,15 +104,36 @@ public class AllMyDrawings
 	
 	// label the drawing
 	
-	g2.drawString("A bunch of shields by Parsa Hadidi", 20,20);
+	g2.drawString("Two shields and transformations of ShieldWithLogo instances sharing the same parameters by Parsa Hadidi", 20,20);
 
-       Shield large = new Shield(200,250,150,200);
-       Shield small = new Shield(50,75,50,75);
+	Shield large = new Shield(200,250,150,200);
+	Shield small = new Shield(50,75,50,75);
        
-       g2.setColor(Color.RED);     g2.draw(large);
-       g2.setColor(Color.GREEN);   g2.draw(small);
-       
-       
+	g2.setColor(Color.RED);     g2.draw(large);
+	g2.setColor(Color.GREEN);   g2.draw(small);
+	Stroke orig=g2.getStroke();
+	
+	ShieldWithLogo largeWL = new ShieldWithLogo(200,250,150,200);
+	Shape largeWLSTR = ShapeTransforms.scaledCopyOfLL(largeWL,2,2);
+	largeWLSTR = ShapeTransforms.translatedCopyOf(largeWLSTR,200,75);
+	largeWLSTR = ShapeTransforms.rotatedCopyOf(largeWLSTR, Math.PI * 1.75);
+
+	Stroke thick = new BasicStroke (5.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);
+	
+	g2.setStroke(thick);
+	g2.setColor(new Color(0x003366));
+	g2.draw(largeWLSTR);
+
+	ShieldWithLogo smallWL = new ShieldWithLogo(50,75,50,75);
+	Shape smallWLSTR = ShapeTransforms.scaledCopyOfLL(smallWL,1.25,1.15);
+	smallWLSTR = ShapeTransforms.translatedCopyOf(smallWLSTR,50,80);
+	smallWLSTR = ShapeTransforms.rotatedCopyOf(smallWLSTR, Math.PI * 0.50);
+
+	Stroke middle = new BasicStroke (1.5f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);
+	
+	g2.setStroke(middle);
+	g2.setColor(new Color(0xCC397B));
+	g2.draw(smallWLSTR);
     }
     
 

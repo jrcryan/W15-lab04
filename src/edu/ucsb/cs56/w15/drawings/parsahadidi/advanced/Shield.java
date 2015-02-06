@@ -34,10 +34,6 @@ public class Shield extends GeneralPathWrapper implements Shape
      */
     public Shield(double x, double y, double width, double height)
     {
-    
-        // Specify the upper left corner, and the 
-        //  width and height of the original points used to 
-        //  plot the *hard-coded* coffee cup
         
         final double ORIG_ULX = 100.0; 
         final double ORIG_ULY = 100.0; 
@@ -58,23 +54,19 @@ public class Shield extends GeneralPathWrapper implements Shape
         top.lineTo(200,100); // top of shield
         
         Shape rightSide = ShapeTransforms.horizontallyFlippedCopyOf(leftSide);
-       
-        // after flipping around the upper left hand corner of the
-        // bounding box, we move this over to the right by 200 pixels
-       
         rightSide = ShapeTransforms.translatedCopyOf(rightSide, 100.0, 0.0);
        
         // now we put the whole thing together ino a single path.
        
-        GeneralPath wholeCup = new GeneralPath ();
-        wholeCup.append(top, false);
-        wholeCup.append(leftSide, false);
-        wholeCup.append(rightSide, false);
+        GeneralPath wholeShield = new GeneralPath ();
+        wholeShield.append(top, false);
+        wholeShield.append(leftSide, false);
+        wholeShield.append(rightSide, false);
 
         // translate to the origin by subtracting the original upper left x and y
         // then translate to (x,y) by adding x and y
         
-        Shape s = ShapeTransforms.translatedCopyOf(wholeCup, -ORIG_ULX + x, -ORIG_ULY + y);
+        Shape s = ShapeTransforms.translatedCopyOf(wholeShield, -ORIG_ULX + x, -ORIG_ULY + y);
  
 	// scale to correct height and width
         s =  ShapeTransforms.scaledCopyOf(s,
@@ -82,7 +74,7 @@ public class Shield extends GeneralPathWrapper implements Shape
 					  height/ORIG_HEIGHT) ;
 	 
 	// Use the GeneralPath constructor that takes a shape and returns
-	// it as a general path to set our instance variable cup
+	// it as a general path to set our instance variable shield
         
 	this.set(new GeneralPath(s));
         
