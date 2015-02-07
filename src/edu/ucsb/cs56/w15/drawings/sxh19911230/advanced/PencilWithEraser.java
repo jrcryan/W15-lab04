@@ -18,7 +18,7 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
    A Pencil With Eraser
       
    @author Xianghong Sun
-   @version for CS56, W11, UCSB, 02/23/2011
+   @version for CS56, W15, UCSB
    
 */
 public class PencilWithEraser extends Pencil implements Shape
