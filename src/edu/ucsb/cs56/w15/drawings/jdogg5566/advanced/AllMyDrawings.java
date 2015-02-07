@@ -32,19 +32,19 @@ public class AllMyDrawings
     public static void drawPicture1(Graphics2D g2) {
 
 	Sweatshirt s1 = new Sweatshirt(250,150,200,120);
-	g2.setColor(Color.CYAN); g2.draw(s1);
+	g2.setColor(Color.CYAN); g2.fill(s1); g2.draw(s1);
 	
 	// Make a black sweatshirt that's half the size, 
 	// and moved over 150 pixels in x direction
 
 	Shape s2 = ShapeTransforms.scaledCopyOfLL(s1,0.5,0.5);
 	s2 = ShapeTransforms.translatedCopyOf(s2,150,0);
-	g2.setColor(Color.BLACK); g2.draw(s2);
+	g2.setColor(Color.BLACK); g2.fill(s2); g2.draw(s2);
 	
-	// Here's a sweatshirt that's 4x as big (2x the original)
-	// and moved over 150 more pixels to right.
-	s2 = ShapeTransforms.scaledCopyOfLL(s2,4,4);
-	s2 = ShapeTransforms.translatedCopyOf(s2,150,0);
+	// Here's a sweatshirt that's 3x as big (1.5x the original)
+	// and moved 150 more pixels to left.
+	s2 = ShapeTransforms.scaledCopyOfLL(s2,3,3);
+	s2 = ShapeTransforms.translatedCopyOf(s2,-150,300);
 	
 	// We'll draw this with a thicker stroke
 	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
@@ -56,6 +56,7 @@ public class AllMyDrawings
 	Stroke orig=g2.getStroke();
 	g2.setStroke(thick);
 	g2.setColor(new Color(0x002FA7)); 
+	g2.fill(s2);
 	g2.draw(s2); 
 	
 	// Draw two houses with Windows
