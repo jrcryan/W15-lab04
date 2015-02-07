@@ -22,9 +22,15 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 
 /**
  * A class with static methods for drawing various pictures
+<<<<<<< HEAD
  * 
  * @author Xianghong Sun
  * @version for CS56, lab06, Winter 2015
+=======
+ * @author Phill Conrad 
+ * @author Xianghong Sun
+ * @version for CS10, lab06, Spring 2009
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
  */
 
 
@@ -35,7 +41,11 @@ public class AllMyDrawings
 
     public static void drawPicture1(Graphics2D g2) {
 
+<<<<<<< HEAD
 	CatFace h1 = new CatFace(100,250,50,75);
+=======
+	Pencil h1 = new Pencil(100,250,50);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
 	g2.setColor(Color.CYAN); g2.draw(h1);
 	
 	// Make a black house that's half the size, 
@@ -64,8 +74,13 @@ public class AllMyDrawings
 	
 	// Draw two houses with Windows
 	
+<<<<<<< HEAD
 	CatFaceWithPaw hw1 = new CatFaceWithPaw(50,350,40,75);
 	CatFaceWithPaw hw2 = new CatFaceWithPaw(200,350,200,100);
+=======
+	PencilWithEraser hw1 = new PencilWithEraser(50,350,40);
+	PencilWithEraser hw2 = new PencilWithEraser(200,350,200);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
 	
 	g2.draw(hw1);
 	g2.setColor(new Color(0x8F00FF)); g2.draw(hw2);
@@ -74,7 +89,11 @@ public class AllMyDrawings
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
+<<<<<<< HEAD
 	g2.drawString("A few houses by Phill Conrad", 20,20);
+=======
+	g2.drawString("A few Pencils by Xianghong Sun", 20,20);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
     }
 
 
@@ -84,17 +103,28 @@ public class AllMyDrawings
 
 	// Draw some coffee cups.
 	
+<<<<<<< HEAD
 	Pencil large = new Pencil(100,50,225);
 	Pencil smallCC = new Pencil(20,50,40);
 	Pencil tallSkinny = new Pencil(20,150,20);
 	Pencil shortFat = new Pencil(20,250,40);
+=======
+	Cat large = new Cat(100,50,225,150);
+	Cat smallCC = new Cat(20,50,40,30);
+	Cat tallSkinny = new Cat(20,150,20,40);
+	Cat shortFat = new Cat(20,250,40,20);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
 	
 	g2.setColor(Color.RED);     g2.draw(large);
 	g2.setColor(Color.GREEN);   g2.draw(smallCC);
 	g2.setColor(Color.BLUE);    g2.draw(tallSkinny);
 	g2.setColor(Color.MAGENTA); g2.draw(shortFat);
 	
+<<<<<<< HEAD
 	CatFace h1 = new CatFace(100,250,50,75);
+=======
+	Pencil h1 = new Pencil(100,250,50);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
 	g2.setColor(Color.CYAN); g2.draw(h1);
 	
 	// Make a black house that's half the size, 
@@ -122,8 +152,13 @@ public class AllMyDrawings
 	
 	// Draw two houses with Windows
 	
+<<<<<<< HEAD
 	CatFaceWithPaw hw1 = new CatFaceWithPaw(50,350,40,75);
 	CatFaceWithPaw hw2 = new CatFaceWithPaw(200,350,200,100);
+=======
+	PencilWithEraser hw1 = new PencilWithEraser(50,350,40);
+	PencilWithEraser hw2 = new PencilWithEraser(200,350,200);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
 	
 	g2.draw(hw1);
 	g2.setColor(new Color(0x8F00FF)); 
@@ -137,7 +172,11 @@ public class AllMyDrawings
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
+<<<<<<< HEAD
 	g2.drawString("A bunch of Coffee Cups and a few houses by Phill Conrad", 20,20);
+=======
+	g2.drawString("A bunch of Cats and a Pencils by Xianghong Sun", 20,20);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
     }
   
     /** Draw a different picture with a few houses and coffee cups
@@ -147,13 +186,18 @@ public class AllMyDrawings
 	
 	// label the drawing
 	
-	g2.drawString("A bunch of Coffee Cups by Phill Conrad", 20,20);
+	g2.drawString("A bunch of Cats by Xianghong Sun", 20,20);
 
 	
 	// Draw some coffee cups.
 	
+<<<<<<< HEAD
        Pencil large = new Pencil(100,50,225);
        Pencil smallCC = new Pencil(20,50,40);
+=======
+       Cat large = new Cat(100,50,225,150);
+       Cat smallCC = new Cat(20,50,40,30);
+>>>>>>> 23097ea8371ac3dcdf5742f73384830da43b3c66
        
        g2.setColor(Color.RED);     g2.draw(large);
        g2.setColor(Color.GREEN);   g2.draw(smallCC);
@@ -163,3 +207,5 @@ public class AllMyDrawings
     
 
 }
+
+
