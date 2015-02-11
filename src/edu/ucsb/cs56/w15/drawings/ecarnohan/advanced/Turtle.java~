@@ -20,8 +20,8 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
    the Shape interface, and so can be drawn, as well as
    rotated, scaled, etc.
       
-   @author Erica Carnohan
-   @version for CS56, Winter 15, UCSB
+   @author Phill Conrad 
+   @version for CS56, Winter 11, UCSB
    
 */
 public class Turtle extends GeneralPathWrapper implements Shape
@@ -53,7 +53,7 @@ public class Turtle extends GeneralPathWrapper implements Shape
         // so we ADD to y to get a "lower" value on the screen
         
         Ellipse2D.Double head  = 
-            new Ellipse2D.Double(x+length, y + width/2.5,
+            new Ellipse2D.Double(x+length, y + width/2.0,
                                length/4.0, width/4.0);
         
 	// make the legs                       
@@ -80,7 +80,7 @@ public class Turtle extends GeneralPathWrapper implements Shape
 	
 	Line2D.Double fLeftLeg2 = 
 	    new Line2D.Double(x + length*0.65, y - width/8.0,
-			      x + length*0.65, y + width/18.0);
+			      x + length*0.65, y + width/16.0);
 
 	Line2D.Double fRightLeg1 =  
 	    new Line2D.Double(x + length*0.8, y + width - width/10.0,
