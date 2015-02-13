@@ -129,13 +129,13 @@ public class AllMyDrawings
 		g2.fill(s);
 		g2.draw(s);
 		
-		g2.setColor(Color.YELLOW);
-		g2.fill(s.logoHead);
-		g2.draw(s.logoHead);
+		// g2.setColor(Color.YELLOW);
+		// g2.fill(s.logoHead);
+		// g2.draw(s.logoHead);
 
-		g2.setColor(Color.BLACK);
-		g2.fill(s.logoFace);
-		g2.draw(s.logoFace);
+		// g2.setColor(Color.BLACK);
+		// g2.fill(s.logoFace);
+		// g2.draw(s.logoFace);
 
 
        Sweatshirt sBig = new Sweatshirt(250,150,200,120);
@@ -156,20 +156,26 @@ public class AllMyDrawings
        g2.setColor(Color.RED);
        g2.fill(sSmall2);
        g2.draw(sSmall2);
+		
+		Shape s2 = ShapeTransforms.translatedCopyOf(s, 100, 100); //
 
-       Shape s2 = ShapeTransforms.translatedCopyOf(s, 100, 100);
+       SweatshirtWithLogo s2Copy  = s2; // I somehow need to get a SweatShirtWithLogo
+       									// Copy of s2 because the logo is made of member variables
+       									// of the SweatShirtWithLogo class
+       									// They are member variables so they can be a different color
+       									// From the color of the sweatshirt body
 
-       g2.setColor(Color.GREEN);
-       g2.fill(s2);
-       g2.draw(s2);
+      g2.setColor(Color.GREEN);
+      g2.fill(s2Copy);
+      g2.draw(s2Copy);
 
-       g2.setColor(Color.RED); // Need to figure out how to draw the smiley with transformed sweatshirt
-       g2.fill((SweatshirtWithLogo)s2.logoHead);
-       g2.draw((SweatshirtWithLogo)s2.logoHead);
+      g2.setColor(Color.RED); // Need to figure out how to draw the smiley with transformed sweatshirt
+      g2.fill(s2Copy.logoHead);
+      g2.draw(s2Copy.logoHead);
 
-       g2.setColor(Color.BLUE);
-       g2.fill((SweatshirtWithLogo)s2.logoFace);
-       g2.draw((SweatshirtWithLogo)s2.logoFace);
+      g2.setColor(Color.BLUE);
+      g2.fill(s2Copy.logoFace);
+      g2.draw(s2Copy.logoFace);
 
        
     }

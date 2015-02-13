@@ -20,6 +20,10 @@ public class SweatshirtWithLogo extends Sweatshirt implements Shape {
    @version for CS56, Winter 15, UCSB
    
 */
+
+   // These member variables will not be accessible
+   // after any affineTransforms take place because
+   // The ShapeTransforms methods return a Shape instance
    GeneralPath logoHead, logoFace;
 
 	public SweatshirtWithLogo (double x, double y, double tHeight, double tWidth) {
