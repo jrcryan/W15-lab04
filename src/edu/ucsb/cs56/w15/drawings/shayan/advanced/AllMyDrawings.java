@@ -35,10 +35,10 @@ public class AllMyDrawings
 	g2.setColor(Color.CYAN); g2.draw(h1);
 	
 	// Make a blank DDR Pad that's half the size, 
-	// and moved over 150 pixels in x direction
+	// and moved over 250 pixels in x direction
 
 	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.5,0.5);
-	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
+	h2 = ShapeTransforms.translatedCopyOf(h2,250,0);
 	g2.setColor(Color.BLACK); g2.draw(h2);
 	
 	// Here's a blank DDR Pad that's 2x as big
@@ -62,9 +62,10 @@ public class AllMyDrawings
 	
 	DDRPad hw1 = new DDRPad(50);
 	DDRPad hw2 = new DDRPad(200);
-	
-	g2.draw(hw1);
-	g2.setColor(new Color(0x8F00FF)); g2.draw(hw2);
+	h2 = ShapeTransforms.translatedCopyOf(hw1,210,50);
+	g2.draw(h2);
+	h2 = ShapeTransforms.translatedCopyOf(hw2,0,230);
+	g2.setColor(new Color(0x8F00FF)); g2.draw(h2);
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
@@ -83,10 +84,13 @@ public class AllMyDrawings
 	DDRArrow small = new DDRArrow(20);
 	DDRArrow medium = new DDRArrow(50);
 	
-	g2.setColor(Color.RED);     g2.draw(large);
-	g2.setColor(Color.GREEN);   g2.draw(small);
-	g2.setColor(Color.BLUE);    g2.draw(medium);
-
+	Shape copy = ShapeTransforms.translatedCopyOf(large,0,150);
+	g2.setColor(Color.RED);     g2.draw(copy);
+	copy = ShapeTransforms.translatedCopyOf(small,100,150);
+	g2.setColor(Color.GREEN);   g2.draw(copy);
+	copy = ShapeTransforms.translatedCopyOf(medium,100,200);
+	copy = ShapeTransforms.rotatedCopyOf(copy,Math.PI/4);
+	g2.setColor(Color.BLUE);    g2.draw(copy);
 	
 	DDRPadBlank h1 = new DDRPadBlank(100);
 	g2.setColor(Color.CYAN); g2.draw(h1);
@@ -118,12 +122,13 @@ public class AllMyDrawings
 	
 	DDRPad hw1 = new DDRPad(50);
 	DDRPad hw2 = new DDRPad(200);
-	
-	g2.draw(hw1);
+	Shape hw3 = ShapeTransforms.translatedCopyOf(hw1, 200, 200);
+	g2.draw(hw3);
 	g2.setColor(new Color(0x8F00FF)); 
 
 	// Rotate the second DDR Pad 45 degrees around its center.
-	Shape hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/4.0);
+	hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/4.0);
+    hw3 = ShapeTransforms.translatedCopyOf(hw3, 300, 120);
 
 	g2.draw(hw3);
 	
@@ -142,13 +147,18 @@ public class AllMyDrawings
 	g2.drawString("DDR Arrows by Shayan Sadigh", 20,20);
 
 	
-	// Draw some coffee cups.
+	// Draw some DDR Arrows
 	
-       DDRArrow large = new DDRArrow(100);
-       DDRArrow small = new DDRArrow(20);
-       
-       g2.setColor(Color.RED);     g2.draw(large);
-       g2.setColor(Color.GREEN);   g2.draw(small);
+       DDRArrow large = new DDRArrow(200);
+       DDRArrow medium = new DDRArrow(100);
+       DDRArrow small = new DDRArrow(50);
+       Shape smallMoved = ShapeTransforms.translatedCopyOf(small, 100, 100);
+       g2.setColor(Color.RED);     g2.draw(smallMoved);
+	   Shape mediumMoved = ShapeTransforms.translatedCopyOf(medium, 300, 0);
+       g2.setColor(Color.GREEN);   g2.draw(mediumMoved);
+	   Shape largeFlipped = ShapeTransforms.rotatedCopyOf(large, Math.PI/2);
+	   largeFlipped = ShapeTransforms.translatedCopyOf(largeFlipped, 200, 150);
+	   g2.setColor(Color.BLUE);   g2.draw(largeFlipped);
        
        
     }
