@@ -34,6 +34,7 @@ public class StopLight extends Pole implements Shape
 
     	super(x,y,width,height);
 
+        //declare variables
     	GeneralPath gp = this.get();
 
     	double lightWidth = 0.5 * width;
@@ -45,6 +46,7 @@ public class StopLight extends Pole implements Shape
         double bendWidth = x + 0.75 * height;
         double bendHeight = straightBottom - height/10;
 
+        //create shapes for stoplight
     	Rectangle2D.Double stopFrame = new Rectangle2D.Double( bendWidth , straightBottom, lightWidth, lightHeight);
     	
     	Line2D.Double stopPole = new Line2D.Double( x , straightBottom , bendWidth , straightBottom);
