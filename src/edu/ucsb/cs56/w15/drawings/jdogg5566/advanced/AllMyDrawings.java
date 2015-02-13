@@ -146,6 +146,9 @@ public class AllMyDrawings
 	
 	g2.drawString("Red and blue sweatshirts by Jonathan Easterman", 20,20);
 
+		SweatshirtWithLogo s = new SweatshirtWithLogo(100, 100, 100, 50);
+
+		g2.draw(s);
 	
 	// Draw some coffee cups.
 	/*
@@ -155,15 +158,15 @@ public class AllMyDrawings
        g2.setColor(Color.RED);     g2.draw(large);
        g2.setColor(Color.GREEN);   g2.draw(smallCC);*/
 
-       Sweatshirt sBig = new Sweatshirt(250,150,200,120);
-       Sweatshirt sSmall = new Sweatshirt(50, 50, 67, 40);
-       g2.setColor(new Color(0x002FA7));
-       g2.fill(sBig);
-       g2.draw(sBig);
+       // Sweatshirt sBig = new Sweatshirt(250,150,200,120);
+       // Sweatshirt sSmall = new Sweatshirt(50, 50, 67, 40);
+       // g2.setColor(new Color(0x002FA7));
+       // g2.fill(sBig);
+       // g2.draw(sBig);
 
-       g2.setColor(Color.RED);
-       g2.fill(sSmall);
-       g2.draw(sSmall);
+       // g2.setColor(Color.RED);
+       // g2.fill(sSmall);
+       // g2.draw(sSmall);
 
        
     }
