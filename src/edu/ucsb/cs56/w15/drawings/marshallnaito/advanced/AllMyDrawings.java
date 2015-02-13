@@ -19,6 +19,7 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 /**
  * A class with static methods for drawing various pictures of poles and stoplights
  * 
+ * @author P. Conrad
  * @author Marshall Naito
  * @version for CS10, lab04, Winter 2015
  */
