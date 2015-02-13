@@ -16,12 +16,12 @@ import edu.ucsb.cs56.w15.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 
 /**
-   A vector drawing of a house that implements
+   A vector drawing of a pole that implements
    the Shape interface, and so can be drawn, as well as
    rotated, scaled, etc.
       
-   @author Phill Conrad 
-   @version for CS56, Winter 11, UCSB
+   @author Marshall Naito
+   @version for CS56, Winter 15, UCSB
    
 */
 public class Pole extends GeneralPathWrapper implements Shape

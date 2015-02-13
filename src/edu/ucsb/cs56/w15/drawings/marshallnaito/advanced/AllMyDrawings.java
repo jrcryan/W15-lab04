@@ -17,95 +17,79 @@ import edu.ucsb.cs56.w15.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 
 /**
- * A class with static methods for drawing various pictures
+ * A class with static methods for drawing various pictures of poles and stoplights
  * 
- * @author Phill Conrad 
- * @version for CS10, lab06, Spring 2009
+ * @author Marshall Naito
+ * @version for CS10, lab04, Winter 2015
  */
 
 
 public class AllMyDrawings
 {
-    /** Draw a picture with a few houses 
+    /** Draw a picture with a few poles and stoplights
      */
 
     public static void drawPicture1(Graphics2D g2) {
 
-	House h1 = new House(100,250,50,75);
-	g2.setColor(Color.CYAN); g2.draw(h1);
-	
-	// Make a black house that's half the size, 
-	// and moved over 150 pixels in x direction
+	     StopLight light1 = new StopLight(100,200, 16, 120);
+	     g2.setColor(Color.BLACK);
+	     g2.draw(light1);
 
-	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.5,0.5);
-	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
-	g2.setColor(Color.BLACK); g2.draw(h2);
-	
-	// Here's a house that's 4x as big (2x the original)
-	// and moved over 150 more pixels to right.
-	h2 = ShapeTransforms.scaledCopyOfLL(h2,4,4);
-	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
-	
-	// We'll draw this with a thicker stroke
-	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
-	
-	// for hex colors, see (e.g.) http://en.wikipedia.org/wiki/List_of_colors
-	// #002FA7 is "International Klein Blue" according to Wikipedia
-	// In HTML we use #, but in Java (and C/C++) its 0x
-	
-	Stroke orig=g2.getStroke();
-	g2.setStroke(thick);
-	g2.setColor(new Color(0x002FA7)); 
-	g2.draw(h2); 
-	
-	// Draw two houses with Windows
-	
-	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
-	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
-	
-	g2.draw(hw1);
-	g2.setColor(new Color(0x8F00FF)); g2.draw(hw2);
-	
-	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
-	
-	g2.setStroke(orig);
-	g2.setColor(Color.BLACK); 
-	g2.drawString("A few houses by Phill Conrad", 20,20);
+	     Shape l1 = ShapeTransforms.rotatedCopyOf(light1,Math.PI/4.0);
+	     l1 = ShapeTransforms.translatedCopyOf(l1,300,45);
+	     g2.setColor(Color.CYAN); 
+	     g2.draw(l1);
+
+		 Pole pole1 = new Pole(150,400, 16, 120);
+	     g2.setColor(Color.BLUE);
+	     g2.draw(pole1);
+
+
+	g2.drawString("A few poles and lights by Marshall Naito", 20,20);
     }
 
 
-    /** Draw a picture with a few houses and coffee cups
+    /** Draw a picture of a few stoplights
      */
     public static void drawPicture2(Graphics2D g2) {
 	
-		g2.drawString("A bunch of Poles by Marshall Naito", 20,20);
 	     
-	     StopLight light1 = new StopLight(100,200, 16, 120);
-	     StopLight light2 = new StopLight(200, 400, 8, 60);
-
-	     Shape l1 = ShapeTransforms.scaledCopyOfLL(light1,0.5,0.5);
-	     l1 = ShapeTransforms.translatedCopyOf(l1,150,0);
-	     g2.setColor(Color.BLACK); 
-	     g2.draw(l1);
-
+	     StopLight light1 = new StopLight(150,200, 16, 120);
+	     g2.setColor(Color.BLACK);
 	     g2.draw(light1);
+
+
+	     StopLight light2 = new StopLight(200, 400, 8, 60);
+	     g2.setColor(Color.GREEN);
 	     g2.draw(light2);
-       
+
+	     Shape l1 = ShapeTransforms.rotatedCopyOf(light1,Math.PI);
+	     g2.setColor(Color.CYAN); 
+	     g2.draw(l1);
+         g2.drawString("A bunch of Poles by Marshall Naito", 20,20);
+
      }
   
-    /** 
+    /** Draw a picture of a few poles
      */
 
     public static void drawPicture3(Graphics2D g2) {
 	
 	// label the drawing
 	
-	g2.drawString("A bunch of Poles by Marshall Naito", 20,20);
+	 g2.drawString("A bunch of Poles by Marshall Naito", 20,20);
      
      Pole pole1 = new Pole(100,200, 16, 120);
-     Pole pole2 = new Pole(200, 400, 8, 60);
-
+     g2.setColor(Color.BLACK);
      g2.draw(pole1);
+
+	 Shape p1 = ShapeTransforms.rotatedCopyOf(pole1,Math.PI/4.0);
+    // p1 = ShapeTransforms.translatedCopyOf(pole1,180,50);
+     g2.setColor(Color.GREEN);
+     g2.draw(p1);
+
+     Pole pole2 = new Pole(200, 400, 32, 60);
+     g2.setColor(Color.PINK);
      g2.draw(pole2);
        
     }

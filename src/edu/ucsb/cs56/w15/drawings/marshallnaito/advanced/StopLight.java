@@ -11,6 +11,8 @@ import java.awt.geom.Ellipse2D;
 import java.awt.Rectangle;
 import java.awt.geom.PathIterator;
 import java.awt.geom.AffineTransform;
+import java.awt.Color; // class for Colors
+
 
 import edu.ucsb.cs56.w15.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
@@ -30,30 +32,30 @@ public class StopLight extends Pole implements Shape
     public StopLight(double x, double y, double width, double height)
     {
 
-	super(x,y,width,height);
+    	super(x,y,width,height);
 
-	GeneralPath gp = this.get();
+    	GeneralPath gp = this.get();
 
-	double lightWidth = 0.5 * width;
-	double lightHeight =  1.5 * width;
-	double lightRadius = 0.33 * lightHeight;
+    	double lightWidth = 0.5 * width;
+    	double lightHeight =  1.5 * width;
+    	double lightRadius = 0.33 * lightHeight;
 
-    double straightBottom = y-height;
+        double straightBottom = y-height;
 
-    double bendWidth = x + 0.75 * height;
-    double bendHeight = straightBottom - height/10;
+        double bendWidth = x + 0.75 * height;
+        double bendHeight = straightBottom - height/10;
 
-	Rectangle2D.Double stopFrame =
-	    new Rectangle2D.Double( bendWidth , straightBottom, lightWidth, lightHeight);
-	
-	Line2D.Double stopPole = new Line2D.Double( x , straightBottom , bendWidth , straightBottom);
+    	Rectangle2D.Double stopFrame = new Rectangle2D.Double( bendWidth , straightBottom, lightWidth, lightHeight);
+    	
+    	Line2D.Double stopPole = new Line2D.Double( x , straightBottom , bendWidth , straightBottom);
 
-	Ellipse2D.Double l1 = new Ellipse2D.Double( bendWidth , straightBottom, lightRadius, lightRadius);
+    	Ellipse2D.Double l1 = new Ellipse2D.Double( bendWidth , straightBottom, lightRadius, lightRadius);
 
-	Ellipse2D.Double l2 = new Ellipse2D.Double( bendWidth , straightBottom+lightRadius, lightRadius, lightRadius);
+    	Ellipse2D.Double l2 = new Ellipse2D.Double( bendWidth , straightBottom+lightRadius, lightRadius, lightRadius);
 
-	Ellipse2D.Double l3 = new Ellipse2D.Double( bendWidth , straightBottom+2*lightRadius, lightRadius, lightRadius);
+    	Ellipse2D.Double l3 = new Ellipse2D.Double( bendWidth , straightBottom+2*lightRadius, lightRadius, lightRadius);
 
+        //create and add everything to generalpath wrapper
         GeneralPath wholeLight = this.get();
         wholeLight.append(stopFrame, false);
         wholeLight.append(stopPole, false);
