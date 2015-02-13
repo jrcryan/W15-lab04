@@ -34,7 +34,7 @@ public class Sweatshirt extends GeneralPathWrapper implements Shape {
     public Sweatshirt (double x, double y, double tHeight, double tWidth) {
         double armY = y; // y coord of the top of the arm
         double rightArmX = x+tWidth; // x coord of the top-left of right arm
-        double leftArmx = x - 1.67*tWidth; // x coord of the top-left of left arm
+        double leftArmx = x - 1.5*tWidth; // x coord of the top-left of left arm
 
         double circleX = x; // x coord of top left of circle
         double circleY = y - .75*tWidth; // y coord of top left of circle
@@ -44,10 +44,10 @@ public class Sweatshirt extends GeneralPathWrapper implements Shape {
             new Rectangle2D.Double(x,y,tWidth,tHeight);
 
         Rectangle2D.Double leftArm = 
-            new Rectangle2D.Double(leftArmx,armY,tHeight,.25*tWidth);
+            new Rectangle2D.Double(leftArmx,armY,.75*tHeight,.25*tWidth);
 
         Rectangle2D.Double rightArm = 
-            new Rectangle2D.Double(rightArmX,armY,tHeight,.25*tWidth);
+            new Rectangle2D.Double(rightArmX,armY,.75*tHeight,.25*tWidth);
 
         Ellipse2D.Double hood = 
             new Ellipse2D.Double(circleX,circleY,circleDiameter,circleDiameter);
