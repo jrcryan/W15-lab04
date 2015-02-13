@@ -144,12 +144,24 @@ public class AllMyDrawings
 	
 	// label the drawing
 	
-	g2.drawString("Red and blue sweatshirts by Jonathan Easterman", 20,20);
+	g2.drawString("Red and blue sweatshirts with logos by Jonathan Easterman", 20,20);
 
-		SweatshirtWithLogo s = new SweatshirtWithLogo(100, 100, 100, 50);
+	SweatshirtWithLogo s = new SweatshirtWithLogo(100, 100, 100, 50);
 
-		g2.draw(s);
+	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL); 
+
+	g2.setStroke(thick);
+	g2.setColor(new Color(0x002FA7));
+	g2.fill(s);
+	g2.draw(s);
 	
+	g2.setColor(Color.YELLOW);
+	g2.fill(s.logoHead);
+	g2.draw(s.logoHead);
+
+	g2.setColor(Color.BLACK);
+	g2.fill(s.logoFace);
+	g2.draw(s.logoFace);
 	// Draw some coffee cups.
 	/*
        CoffeeCup large = new CoffeeCup(100,50,225,150);

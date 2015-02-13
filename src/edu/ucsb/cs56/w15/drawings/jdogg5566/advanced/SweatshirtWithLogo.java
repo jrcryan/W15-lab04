@@ -20,6 +20,7 @@ public class SweatshirtWithLogo extends Sweatshirt implements Shape {
    @version for CS56, Winter 15, UCSB
    
 */
+   GeneralPath logoHead, logoFace;
 
 	public SweatshirtWithLogo (double x, double y, double tHeight, double tWidth) {
    		super(x, y, tHeight, tWidth);
@@ -30,13 +31,13 @@ public class SweatshirtWithLogo extends Sweatshirt implements Shape {
    		double rightEyeX = headX * 1.2;
    		double rightEyeY = headY * 1.05;
    		double mouthX = leftEyeX;
-   		double mouthY = leftEyeY * 1.1;
+   		double mouthY = leftEyeY * 1.15;
 
    		Ellipse2D.Double head =
    			new Ellipse2D.Double(headX, headY, .75 * tWidth, .75 * tWidth);
 
    		Rectangle2D.Double mouth =
-   			new Rectangle2D.Double(mouthX, mouthY, .60 * tWidth, .1 * tHeight);
+   			new Rectangle2D.Double(mouthX, mouthY, .60 * tWidth, .05 * tHeight);
 
    		Ellipse2D.Double leftEye =
    			new Ellipse2D.Double(leftEyeX, leftEyeY, .25 * tWidth, .25 * tWidth);
@@ -44,12 +45,19 @@ public class SweatshirtWithLogo extends Sweatshirt implements Shape {
    		Ellipse2D.Double rightEye =
    			new Ellipse2D.Double(rightEyeX, rightEyeY, .25 * tWidth, .25*tWidth);
 
-   		GeneralPath wholeSweatshirt = this.get();
+   		/*GeneralPath wholeSweatshirt = this.get();
    		wholeSweatshirt.append(head, false);
    		wholeSweatshirt.append(leftEye, false);
    		wholeSweatshirt.append(rightEye, false);
    		wholeSweatshirt.append(mouth, false);
+         */
+         logoHead = new GeneralPath();
+         logoHead.append(head,false);
 
+         logoFace = new GeneralPath();
+         logoFace.append(leftEye, false);
+         logoFace.append(rightEye,false);
+         logoFace.append(mouth, false);
    }
 
 
