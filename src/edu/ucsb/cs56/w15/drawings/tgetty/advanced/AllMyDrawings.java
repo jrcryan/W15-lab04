@@ -44,7 +44,7 @@ public class AllMyDrawings
 	// Here's a door that's 4x as big (2x the original)
 	// and moved over 150 more pixels to right.
 	d2 = ShapeTransforms.scaledCopyOfLL(d2,4,4);
-	d2 = ShapeTransforms.translatedCopyOf(d2,150,0);
+	d2 = ShapeTransforms.translatedCopyOf(d2,100,0);
 	
 	// We'll draw this with a thicker stroke
 	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
@@ -61,9 +61,9 @@ public class AllMyDrawings
 	// Draw two doors with Windows
 	
 	DoorWithWindow dw1 = new DoorWithWindow(50,350,40,75);
-	DoorWithWindow dw2 = new DoorWithWindow(200,350,200,100);
+	DoorWithWindow dw2 = new DoorWithWindow(175,50,200,100);
 	
-	g2.draw(dw1);
+	g2.setColor(Color.PINK);   g2.draw(dw1);
 	g2.setColor(new Color(0x8F00FF)); g2.draw(dw2);
 	
 	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
@@ -93,28 +93,9 @@ public class AllMyDrawings
 	Door d1 = new Door(100,250,50,75);
 	g2.setColor(Color.CYAN); g2.draw(d1);
 	
-	// Make a black door that's half the size, 
-	// and moved over 150 pixels in x direction
-	Shape d2 = ShapeTransforms.scaledCopyOfLL(d1,0.5,0.5);
-	d2 = ShapeTransforms.translatedCopyOf(d2,150,0);
-	g2.setColor(Color.BLACK); g2.draw(d2);
+	Door d2 = new Door(200,50,20,30);
+	g2.setColor(Color.GRAY); g2.draw(d2);
 	
-	// Here's a door that's 4x as big (2x the original)
-	// and moved over 150 more pixels to right.
-	d2 = ShapeTransforms.scaledCopyOfLL(d2,4,4);
-	d2 = ShapeTransforms.translatedCopyOf(d2,150,0);
-	
-	// We'll draw this with a thicker stroke
-	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
-	
-	// for hex colors, see (e.g.) http://en.wikipedia.org/wiki/List_of_colors
-	// #002FA7 is "International Klein Blue" according to Wikipedia
-	// In HTML we use #, but in Java (and C/C++) its 0x
-	
-	Stroke orig=g2.getStroke();
-	g2.setStroke(thick);
-	g2.setColor(new Color(0x002FA7)); 
-	g2.draw(d2); 
 	
 	// Draw two doors with Windows
 	
@@ -126,12 +107,16 @@ public class AllMyDrawings
 
 	// Rotate the second house 45 degrees around its center.
 	Shape dw3 = ShapeTransforms.rotatedCopyOf(dw2, Math.PI/4.0);
+	dw3 = ShapeTransforms.translatedCopyOf(dw3,0,-90);
+	// Rotate the first house 90 degrees around its center
+	Shape dw4 = ShapeTransforms.rotatedCopyOf(dw1, Math.PI/2.0);
+	dw4 =  ShapeTransforms.translatedCopyOf(dw4,290,-150);
 
 	g2.draw(dw3);
+	g2.setColor(Color.ORANGE);  g2.draw(dw4);
 	
 	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	
-	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
 	g2.drawString("A bunch of doors by Taylor Getty", 20,20);
     }
@@ -148,11 +133,22 @@ public class AllMyDrawings
 	
 	// Draw some doors
 	
-       Door large = new Door(100,50,225,150);
-       Door smallCC = new Door(20,50,40,30);
+       Door large = new Door(20,200,225,150);
+       Door smallD = new Door(20,100,40,30);
        
-       g2.setColor(Color.RED);     g2.draw(large);
-       g2.setColor(Color.GREEN);   g2.draw(smallCC);
+       g2.setColor(Color.PINK);     g2.draw(large);
+       g2.setColor(Color.RED);   g2.draw(smallD);
+
+       DoorWithWindow big = new DoorWithWindow(250,200,225,150);
+       DoorWithWindow small = new DoorWithWindow(80,100,40,30);
+
+       g2.setColor(Color.BLUE);   g2.draw(big);
+       g2.setColor(Color.GREEN);    g2.draw(small);
+
+       Shape rotateSmall = ShapeTransforms.rotatedCopyOf(small, Math.PI/4.0);
+       rotateSmall = ShapeTransforms.translatedCopyOf(rotateSmall,150,0);
+       g2.setColor(Color.CYAN);
+       g2.draw(rotateSmall);
        
        
     }
