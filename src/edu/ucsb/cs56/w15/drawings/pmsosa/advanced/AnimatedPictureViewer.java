@@ -71,10 +71,11 @@ public class AnimatedPictureViewer {
         try {
           while (true) {
             // Bounce off the walls
-	      if (y <=0){ dy = +5;}
-	      if (y >=400){ dy = -5;}
-	      if (x >= 400) { dx = -5; }
-	      if (x <= 50) { dx = 5; }
+	      Random rand = new Random();
+	      if (y <=0){ dy = rand.nextInt(10)+4;}
+	      if (y >=300){ dy = -rand.nextInt(10)+4;}
+	      if (x >= 500) { dx = -rand.nextInt(10)+4; }
+	      if (x <= 50) { dx = rand.nextInt(10)+4; }
             
             x += dx;
 	    y += dy;
