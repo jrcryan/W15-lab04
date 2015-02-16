@@ -52,7 +52,7 @@ public class PictureComponent extends JComponent
       Graphics2D g2 = (Graphics2D) g;
 
       // Now the fun part---we draw stuff!
-      // @@@ YOU'LL CUSTOMIZE EVERYTHING BELOW THIS LINE
+
       
       Rectangle house = new Rectangle(100, 200, 100, 100);
       g2.draw( house);
@@ -95,7 +95,7 @@ public class PictureComponent extends JComponent
            );
        g2.draw(snowManMiddleCircle);
 
-       // @@@ ADD CODE HERE TO DRAW THE TOP CIRCLE
+
        
        g2.draw(new Circle (
 			    snowManCenterBottomX,
@@ -103,7 +103,7 @@ public class PictureComponent extends JComponent
 					middleRadius * 2 - topRadius,
 			    topRadius
 			  ));
-       // @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
+
        
        g2.drawString("A house and a snowman, by Phill Conrad", 20,20);
        g2.drawString("Top of snowman added by Xianghong Sun", 20,40);

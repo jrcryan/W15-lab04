@@ -24,7 +24,7 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 public class PencilWithEraser extends Pencil implements Shape
 {
     /**
-     * Constructor for objects of class CoffeeCup
+     * Constructor for objects of class PencilWithEraser
      */
     public PencilWithEraser(double x, double y, double size)
     {
