@@ -11,14 +11,15 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 
 
 /**
-   A subclass of a vector drawing of a sweatshirt that implements
-   the Shape interface that adds a logo (smiley face) to the torso of the sweatshirt.
-   Can be drawn, rotated, scaled, etc.
-      
-   @author Jonathan Easterman 
-   @version for CS56, Winter 15, UCSB
-   
+   * A subclass of a vector drawing of a sweatshirt that implements
+   *the Shape interface that adds a logo (smiley face) to the torso of the sweatshirt.
+   *Can be drawn, rotated, scaled, etc.
+   *   
+   *@author Jonathan Easterman 
+   *@version for CS56, Winter 15, UCSB
+   *
 */
+
 public class SweatshirtWithLogo extends Sweatshirt implements Shape {
 
 
