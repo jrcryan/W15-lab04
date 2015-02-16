@@ -9,7 +9,6 @@ import java.awt.Rectangle;
 import edu.ucsb.cs56.w15.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 
-public class SweatshirtWithLogo extends Sweatshirt implements Shape {
 
 /**
    A subclass of a vector drawing of a sweatshirt that implements
@@ -20,6 +19,8 @@ public class SweatshirtWithLogo extends Sweatshirt implements Shape {
    @version for CS56, Winter 15, UCSB
    
 */
+public class SweatshirtWithLogo extends Sweatshirt implements Shape {
+
 
    // These member variables will not be accessible
    // after any affineTransforms take place because
