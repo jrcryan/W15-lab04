@@ -28,7 +28,7 @@ public class PencilWithEraser extends Pencil implements Shape
      */
     public PencilWithEraser(double x, double y, double size)
     {
-	// construct the basic house shell
+	// construct the basic Pencil
 	super(x,y,size);
 	
 	
@@ -40,9 +40,6 @@ public class PencilWithEraser extends Pencil implements Shape
 	    new RoundRectangle2D.Double(x , y + topEraser, width, 0.1 * height, 0.1* width, 0.025* height);
 	
 	
-	// add the windows to the house
-	// Look up the meaning of the second parameter of append
-	// (Hint--is a method of "GeneralPath")
 
         GeneralPath wholeHouse = this.get();
         wholeHouse.append(eraiser, false);

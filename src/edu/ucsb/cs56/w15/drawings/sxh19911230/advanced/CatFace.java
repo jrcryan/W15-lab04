@@ -55,8 +55,7 @@ public class CatFace extends GeneralPathWrapper implements Shape
             new Ellipse2D.Double(x, catFaceUpperLeftY ,
                           width, catFaceHeight);
                           
-        // make the catFace.   Remember that y goes DOWN the page,
-        // so we ADD to y to get a "lower" value on the screen
+        // make the catFace.
         
         QuadCurve2D.Double leftEar = 
             new QuadCurve2D.Double(.2 * width + x, .4 * height  + y, 

@@ -30,7 +30,7 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 
 public class AllMyDrawings
 {
-    /** Draw a picture with a few houses 
+    /** Draw a picture with a few cat face 
      */
 
     public static void drawPicture1(Graphics2D g2) {
@@ -38,14 +38,14 @@ public class AllMyDrawings
 	CatFace h1 = new CatFace(100,250,50,75);
 	g2.setColor(Color.CYAN); g2.draw(h1);
 	
-	// Make a black house that's half the size, 
+	// Make a black cat face that's half the size, 
 	// and moved over 150 pixels in x direction
 
 	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.5,0.5);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
 	g2.setColor(Color.BLACK); g2.draw(h2);
 	
-	// Here's a house that's 4x as big (2x the original)
+	// Here's a cat face that's 4x as big (2x the original)
 	// and moved over 150 more pixels to right.
 	h2 = ShapeTransforms.scaledCopyOfLL(h2,4,4);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
@@ -62,7 +62,7 @@ public class AllMyDrawings
 	g2.setColor(new Color(0x002FA7)); 
 	g2.draw(h2); 
 	
-	// Draw two houses with Windows
+	// Draw two cat face with paws
 	
 	CatFaceWithPaw hw1 = new CatFaceWithPaw(50,350,40,75);
 	CatFaceWithPaw hw2 = new CatFaceWithPaw(200,350,200,100);
@@ -74,15 +74,15 @@ public class AllMyDrawings
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("A few houses by Phill Conrad", 20,20);
+	g2.drawString("A few cat face by Xianghong Sun", 20,20);
     }
 
 
-    /** Draw a picture with a few houses and coffee cups
+    /** Draw a picture with a few cat face and pencils
      */
     public static void drawPicture2(Graphics2D g2) {
 
-	// Draw some coffee cups.
+	// Draw some pencils.
 	
 	Pencil large = new Pencil(100,50,225);
 	Pencil smallCC = new Pencil(20,50,40);
@@ -97,13 +97,13 @@ public class AllMyDrawings
 	CatFace h1 = new CatFace(100,250,50,75);
 	g2.setColor(Color.CYAN); g2.draw(h1);
 	
-	// Make a black house that's half the size, 
+	// Make a black cat face that's half the size, 
 	// and moved over 150 pixels in x direction
 	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.5,0.5);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
 	g2.setColor(Color.BLACK); g2.draw(h2);
 	
-	// Here's a house that's 4x as big (2x the original)
+	// Here's a cat face that's 4x as big (2x the original)
 	// and moved over 150 more pixels to right.
 	h2 = ShapeTransforms.scaledCopyOfLL(h2,4,4);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
@@ -120,7 +120,7 @@ public class AllMyDrawings
 	g2.setColor(new Color(0x002FA7)); 
 	g2.draw(h2); 
 	
-	// Draw two houses with Windows
+	// Draw two cat face with paws
 	
 	CatFaceWithPaw hw1 = new CatFaceWithPaw(50,350,40,75);
 	CatFaceWithPaw hw2 = new CatFaceWithPaw(200,350,200,100);
@@ -128,7 +128,7 @@ public class AllMyDrawings
 	g2.draw(hw1);
 	g2.setColor(new Color(0x8F00FF)); 
 
-	// Rotate the second house 45 degrees around its center.
+	// Rotate the second cat face 45 degrees around its center.
 	Shape hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/4.0);
 
 	g2.draw(hw3);
@@ -137,20 +137,20 @@ public class AllMyDrawings
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("A bunch of Coffee Cups and a few houses by Phill Conrad", 20,20);
+	g2.drawString("A bunch of Pencils and a few cat face by Xianghong Sun", 20,20);
     }
   
-    /** Draw a different picture with a few houses and coffee cups
+    /** Draw a different picture with a few cat face and pencils
      */
 
     public static void drawPicture3(Graphics2D g2) {
 	
 	// label the drawing
 	
-	g2.drawString("A bunch of Coffee Cups by Phill Conrad", 20,20);
+	g2.drawString("A bunch of pencils by Xianghong Sun", 20,20);
 
 	
-	// Draw some coffee cups.
+	// Draw some pencils.
 	
        Pencil large = new Pencil(100,50,225);
        Pencil smallCC = new Pencil(20,50,40);
