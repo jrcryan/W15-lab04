@@ -34,7 +34,7 @@ public class Sweatshirt extends GeneralPathWrapper implements Shape {
     public Sweatshirt (double x, double y, double tHeight, double tWidth) {
         double armY = y; // y coord of the top of the arm
         double rightArmX = x+tWidth; // x coord of the top-left of right arm
-        double leftArmx = x - 1.5*tWidth; // x coord of the top-left of left arm
+        double leftArmx = x - 1.25*tWidth; // x coord of the top-left of left arm
 
         double circleX = x; // x coord of top left of circle
         double circleY = y - .75*tWidth; // y coord of top left of circle

@@ -26,14 +26,23 @@ public class SweatshirtWithLogo extends Sweatshirt implements Shape {
    // The ShapeTransforms methods return a Shape instance
    GeneralPath logoHead, logoFace;
 
+   /**
+       Constructor
+
+       @param x x coord of top-left of torso of sweatshirt
+       @param y y coord of top-left of torso of sweatshirt
+   @param tHeight the height of the torso shape, arms and hood will be scaled accordingly
+   @param tWidth the width of the torso shape, arms and hood will be scaled accordingly
+*/
+
 	public SweatshirtWithLogo (double x, double y, double tHeight, double tWidth) {
    		super(x, y, tHeight, tWidth);
-   		double headX = x * 1.07;
-   		double headY = y * 1.2;
+   		double headX = x + .15*tWidth;
+   		double headY = y + .17*tHeight;
    		double leftEyeX = headX * 1.03;
-   		double leftEyeY = headY * 1.05;
-   		double rightEyeX = headX * 1.2;
-   		double rightEyeY = headY * 1.05;
+   		double leftEyeY = headY * 1.07;
+   		double rightEyeX = headX * 1.15;
+   		double rightEyeY = headY * 1.07;
    		double mouthX = leftEyeX;
    		double mouthY = leftEyeY * 1.15;
 
