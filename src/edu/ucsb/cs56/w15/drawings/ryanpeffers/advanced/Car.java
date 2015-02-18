@@ -30,10 +30,10 @@ public class Car extends GeneralPathWrapper implements Shape
 
        @param x x coord of lower left corner of car
        @param y y coord of lower left corner of car
-       @param width width of the car
+       @param length length of the car
        @param height of car
      */
-    public House(double x, double y, double width, double height)
+    public House(double x, double y, double length, double height)
     {
     
         // Rather than having to scale at the end, we can just
@@ -44,31 +44,48 @@ public class Car extends GeneralPathWrapper implements Shape
         
 	//        double firstStoryHeight = .75 * height;
 	//        double roofHeight = height - firstStoryHeight;
-        double underSide1 = 0.2 * length;
+        double underSide1 = 0.15 * length;
 	double bumper2 = 0.66 * height;
 	double trunkLength3 = underSide1;
 	double rearWindow4 = 1.4142 * 0.34 * height; // length of 45 degree angle windows
-	double roof5 = 
+	double frontWindow9 = 2 * 0.34 * height;
+	double hood6 = 0.3 * length;
+	double roof5 = (0.55 * length) - (0.34 * height) - (0.866 * frontWindow9);
 
 	//        double firstStoryUpperLeftY = y + roofHeight;
         
         // Make the first story
-        
+        /*
         Rectangle2D.Double firstStory = 
             new Rectangle2D.Double(x, firstStoryUpperLeftY ,
                           width, firstStoryHeight);
-                          
+	*/                
         // make the roof.   Remember that y goes DOWN the page,
         // so we ADD to y to get a "lower" value on the screen
         
-        Line2D.Double leftRoof = 
+	Line2D.Double rearUnderSide = new Line2D.Double (x, y, x + underSide1, y);
+	Line2D.Double rearBumper = new Line2D.Double (x, y, x, y + bumper2);
+	Line2D.Double trunkLength = new Line2D.Double (x, y + bumper2, x + trunkLength3, y);
+	Line2D.Double rearWindow = 
+	    new Line2D.Double (x+underSide1, y+bumper2, x+underside1+(0.34*height), y + height);
+	Line2D.Double roof = 
+	    new Line2D.Double 
+	    (x+underside1+(0.34*height), y+height, x+(0.7*length)-(0.866*frontWindow9), y + height);
+	Line2D.Double frontWindow = 
+	    new Line2D.Double 
+	    (x+(0.7*length)-(0.866*frontWindow9), y+height, x+(0.7*length), y+bumper2);
+	Line2D.Double hood = new Line2D.Double (x+(0.7*length), y+bumper2, x+length, y+bumper2);
+	Line2D.Double frontBumper = new Line2D.Double (x+length, y+bumper2, x+length, y);
+	Line2D.Double frontUnderSide = new Line2D.Double (x+length, y, x+length-underSide1, y);
+	
+	/*        Line2D.Double leftRoof = 
             new Line2D.Double (x, y + roofHeight,
                                x + width/2.0, y);
                                
         Line2D.Double rightRoof =
             new Line2D.Double (x + width/2.0, y,
                                x + width, y + roofHeight);
-
+	*/
         // put the whole house together
        
         GeneralPath wholeHouse = this.get();

@@ -64,7 +64,8 @@ public class AllMyDrawings
 	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
 	
 	g2.draw(hw1);
-	g2.setColor(new Color(0x8F00FF)); g2.draw(hw2);
+	g2.setColor(new Color(0x8F00FF));
+	g2.draw(hw2);
 	
 	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	

@@ -17,7 +17,7 @@ import java.awt.geom.GeneralPath; // combinations of lines and curves
    
    @author Phill Conrad (original drawing)
    @author Ryan Peffers (fixed head of snowman)
-   @version for UCSB CS56, S13
+   @version for UCSB CS56, W15
 
    
 */
