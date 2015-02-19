@@ -44,8 +44,8 @@ public class TreeWithBalls extends Tree implements Shape
 	Line2D.Double leftSide = new Line2D.Double (startX, startY, startX, startY + .75*yRad);
 	Line2D.Double rightSide = new Line2D.Double (startX+xRad, startY, startX+xRad, startY + .75*yRad);
 	
-	Arc2D leftNut=new Arc2D.Double(startX-.5*xRad, startY+.75*yRad, xRad, yRad, 90, 270,  Arc2D.OPEN);
-  	Arc2D rightNut=new Arc2D.Double(startX+.5*xRad, startY+.75*yRad, xRad, yRad, 90, -270,  Arc2D.OPEN);
+	Arc2D leftNut=new Arc2D.Double(startX-.5*xRad, startY+yRad, xRad, yRad, 90, 270,  Arc2D.OPEN);
+  	Arc2D rightNut=new Arc2D.Double(startX+.5*xRad, startY+yRad, xRad, yRad, 90, -270,  Arc2D.OPEN);
 
 
 	
