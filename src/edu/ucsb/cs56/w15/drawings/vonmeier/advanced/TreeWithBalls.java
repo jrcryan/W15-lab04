@@ -15,16 +15,16 @@ import java.awt.geom.Arc2D;
 import edu.ucsb.cs56.w15.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 /**
-   A House
+   A Tree
       
    @author Ishi von Meier 
-   @version for CS56, W15, UCSB, 02/23/2011
+   @version for CS56, W15, UCSB, 02/20/2015
    
 */
 public class TreeWithBalls extends Tree implements Shape
 {
     /**
-     * Constructor for objects of class CoffeeCup
+     * Constructor for objects of class TreeWithBalls
      */
     public TreeWithBalls(double x, double y, double width, double height)
     {
