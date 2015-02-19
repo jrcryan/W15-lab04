@@ -1,4 +1,4 @@
-package edu.ucsb.cs56.w15.drawings.pmsosa;
+package edu.ucsb.cs56.w15.drawings.pconrad;
 import javax.swing.*;
 
 /** SimpleGui1 comes from Head First Java 2nd Edition p. 355.
@@ -18,14 +18,8 @@ public class SimpleGui1 {
 
     public static void main (String[] args) {
 	JFrame frame = new JFrame() ;
-	
-    JButton button = new JButton("I'm feeling witty!") ;
-    
-    java.awt.Color myColor = new java.awt.Color(204,255,000);   // R, G, B values.
-    button.setBackground(myColor);
-    button.setOpaque(true);
-	
-    frame. setDefaultCloseOperation(JFrame. EXIT_ON_CLOSE) ;
+	JButton button = new JButton("click me") ;
+	frame. setDefaultCloseOperation(JFrame. EXIT_ON_CLOSE) ;
 	frame. getContentPane() . add(button) ;
 	frame. setSize(300,300) ;
 	frame. setVisible(true) ;
