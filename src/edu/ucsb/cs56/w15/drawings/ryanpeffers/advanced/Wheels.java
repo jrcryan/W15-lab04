@@ -14,45 +14,49 @@ import java.awt.geom.AffineTransform;
 import edu.ucsb.cs56.w15.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 /**
-   A House
+   A Car
       
    @author Phill Conrad 
-   @version for CS56, W11, UCSB, 02/23/2011
+   @version for CS56, W15, UCSB, lab04
    
 */
-public class HouseWithWindows extends House implements Shape
+public class Wheels extends Car implements Shape
 {
     /**
      * Constructor for objects of class CoffeeCup
      */
-    public HouseWithWindows(double x, double y, double width, double height)
+    public Wheels(double x, double y, double length, double height)
     {
-	// construct the basic house shell
-	super(x,y,width,height);
+	// construct the basic car shell
+	super(x,y,length,height);
 
 	// get the GeneralPath that we are going to append stuff to
 	GeneralPath gp = this.get();
 	
-	// Make three windows, spaced like this, where w=width/10.0;
-	// | +--+ +--+ +--+ |
-	// | |  | |  | |  | |
-	// | +--+ +--+ +--+ |
-	// |w 2w w 2w w w2 w|
-	//
-	// The top of window will be at y + 0.5*height and the
-	// height of the window is 0.25height;
+	// Make 2 wheels and 2 windows and a door
 
-	double w = 0.10 * width;
-	double winTop = y + 0.5 * height;
-	double winHt =  0.25 * height;
+	// The windows will be for front and back
+	// The wheels will go in the wheel wells
 
+	double lengthToWheelWell = length * 0.21;
+	double lengthToMidCabin =  (0.15 * length) + (0.34*width) + ((0.55*length) - (0.34*height) - (0.866 * 0.68 * height))/2;
+	double windowHeight = 0.3 * height;
+	double backSection = 0.15*length + 0.34*height;
+	double frontSection = 0.3*length + 1.732*0.34*height;
+
+
+	Rectangle2D.Double backWindow = 
+	    new Rectangle2D.Double(x + backSection, 0.66*height, lengthToMidCabin-backSection-(0.04*length), windowHeight);
+	Rectangle2D.Double frontWindow = 
+	    new Rectangle2D.Double(x + lengthToMidCabin+(0.04*length), 0.66*height, , winHt);
+	    /*
 	Rectangle2D.Double win1 =
 	    new Rectangle2D.Double(x + w, winTop, 2.0 * w, winHt);
 	Rectangle2D.Double win2 =
 	    new Rectangle2D.Double(x + 4.0*w, winTop, 2.0 * w, winHt);
 	Rectangle2D.Double win3 =
 	    new Rectangle2D.Double(x + 7.0*w, winTop, 2.0 * w, winHt);
-	
+	    */
 	// add the windows to the house
 	// Look up the meaning of the second parameter of append
 	// (Hint--is a method of "GeneralPath")

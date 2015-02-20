@@ -1,4 +1,5 @@
 package edu.ucsb.cs56.w15.drawings.ryanpeffers.advanced;
+
 import java.awt.geom.GeneralPath; // combinations of lines and curves
 import java.awt.geom.AffineTransform; // translation, rotation, scale
 import java.awt.Shape; // general class for shapes
@@ -33,7 +34,7 @@ public class Car extends GeneralPathWrapper implements Shape
        @param length length of the car
        @param height of car
      */
-    public House(double x, double y, double length, double height)
+    public Car(double x, double y, double length, double height)
     {
     
         // Rather than having to scale at the end, we can just
@@ -48,10 +49,12 @@ public class Car extends GeneralPathWrapper implements Shape
 	double bumper2 = 0.66 * height;
 	double trunkLength3 = underSide1;
 	double rearWindow4 = 1.4142 * 0.34 * height; // length of 45 degree angle windows
-	double frontWindow9 = 2 * 0.34 * height;
+	double frontWindow9 = 2 * 0.34 * height; //length of 30 degree angle windows
 	double hood6 = 0.3 * length;
 	double roof5 = (0.55 * length) - (0.34 * height) - (0.866 * frontWindow9);
-
+	double UnderSide7 = length - (2 * underSide1) - (0.24 * length);
+	double wheelWellLength8 = 0.12*length;
+	
 	//        double firstStoryUpperLeftY = y + roofHeight;
         
         // Make the first story
@@ -64,35 +67,39 @@ public class Car extends GeneralPathWrapper implements Shape
         // so we ADD to y to get a "lower" value on the screen
         
 	Line2D.Double rearUnderSide = new Line2D.Double (x, y, x + underSide1, y);
-	Line2D.Double rearBumper = new Line2D.Double (x, y, x, y + bumper2);
-	Line2D.Double trunkLength = new Line2D.Double (x, y + bumper2, x + trunkLength3, y);
+	Line2D.Double rearBumper = new Line2D.Double (x, y, x, y - bumper2);
+	Line2D.Double trunkLength = new Line2D.Double (x, y - bumper2, x + trunkLength3, y - bumper2);
 	Line2D.Double rearWindow = 
-	    new Line2D.Double (x+underSide1, y+bumper2, x+underside1+(0.34*height), y + height);
+	    new Line2D.Double (x+underSide1, y-bumper2, x+underSide1+(0.34*height), y - height);
 	Line2D.Double roof = 
 	    new Line2D.Double 
-	    (x+underside1+(0.34*height), y+height, x+(0.7*length)-(0.866*frontWindow9), y + height);
+	    (x+underSide1+(0.34*height), y-height, x+(0.7*length)-(0.866*frontWindow9), y - height);
 	Line2D.Double frontWindow = 
 	    new Line2D.Double 
-	    (x+(0.7*length)-(0.866*frontWindow9), y+height, x+(0.7*length), y+bumper2);
-	Line2D.Double hood = new Line2D.Double (x+(0.7*length), y+bumper2, x+length, y+bumper2);
-	Line2D.Double frontBumper = new Line2D.Double (x+length, y+bumper2, x+length, y);
+	    (x+(0.7*length)-(0.866*frontWindow9), y-height, x+(0.7*length), y-bumper2);
+	Line2D.Double hood = new Line2D.Double (x+(0.7*length), y-bumper2, x+length, y-bumper2);
+	Line2D.Double frontBumper = new Line2D.Double (x+length, y-bumper2, x+length, y);
 	Line2D.Double frontUnderSide = new Line2D.Double (x+length, y, x+length-underSide1, y);
+	Line2D.Double UnderSide = 
+	    new Line2D.Double 
+	    (x+underSide1+wheelWellLength8, y, x+length-underSide1-wheelWellLength8, y);
 	
-	/*        Line2D.Double leftRoof = 
-            new Line2D.Double (x, y + roofHeight,
-                               x + width/2.0, y);
-                               
-        Line2D.Double rightRoof =
-            new Line2D.Double (x + width/2.0, y,
-                               x + width, y + roofHeight);
-	*/
-        // put the whole house together
+	// Size of wheel will be radius = 0.06 * length which leaves a 0.12 * length wheel well
+	
+        // put the whole car together
        
-        GeneralPath wholeHouse = this.get();
-        wholeHouse.append(firstStory, false);
-        wholeHouse.append(leftRoof, false);
-        wholeHouse.append(rightRoof, false); 
-        
+        GeneralPath wholeCar = this.get();
+        wholeCar.append(rearUnderSide, false);
+        wholeCar.append(rearBumper, false);
+        wholeCar.append(trunkLength, false); 
+        wholeCar.append(rearWindow, false); 
+	wholeCar.append(roof, false); 
+	wholeCar.append(frontWindow, false); 
+	wholeCar.append(hood, false); 
+	wholeCar.append(frontBumper, false); 
+	wholeCar.append(frontUnderSide, false); 
+	wholeCar.append(UnderSide, false); 
+
     }
 
 }

@@ -1,4 +1,4 @@
-package edu.ucsb.cs56.w15.drawings.pconrad.advanced;
+package edu.ucsb.cs56.w15.drawings.ryanpeffers.advanced;
 
 import java.awt.Graphics2D;
 import java.awt.geom.Line2D;  // single lines
@@ -19,19 +19,19 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 /**
  * A class with static methods for drawing various pictures
  * 
- * @author Phill Conrad 
- * @version for CS10, lab06, Spring 2009
+ * @author Ryan Peffers
+ * @version for CS56, lab04, Winter 2015
  */
 
 
 public class AllMyDrawings
 {
-    /** Draw a picture with a few houses 
+    /** Draw a picture with a few cars 
      */
 
     public static void drawPicture1(Graphics2D g2) {
 
-	House h1 = new House(100,250,50,75);
+	Car h1 = new Car(100,250,70,20);
 	g2.setColor(Color.CYAN); g2.draw(h1);
 	
 	// Make a black house that's half the size, 
@@ -60,25 +60,25 @@ public class AllMyDrawings
 	
 	// Draw two houses with Windows
 	
-	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
-	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
-	
+	//	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
+	//	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
+	/*
 	g2.draw(hw1);
 	g2.setColor(new Color(0x8F00FF));
 	g2.draw(hw2);
-	
+	*/
 	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("A few houses by Phill Conrad", 20,20);
+	g2.drawString("A few cars by Ryan Peffers", 20,20);
     }
 
 
     /** Draw a picture with a few houses and coffee cups
      */
     public static void drawPicture2(Graphics2D g2) {
-
+	/*
 	// Draw some coffee cups.
 	
 	CoffeeCup large = new CoffeeCup(100,50,225,150);
@@ -135,13 +135,15 @@ public class AllMyDrawings
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
 	g2.drawString("A bunch of Coffee Cups and a few houses by Phill Conrad", 20,20);
+	*/
     }
+
   
     /** Draw a different picture with a few houses and coffee cups
      */
 
     public static void drawPicture3(Graphics2D g2) {
-	
+	/*
 	// label the drawing
 	
 	g2.drawString("A bunch of Coffee Cups by Phill Conrad", 20,20);
@@ -155,7 +157,7 @@ public class AllMyDrawings
        g2.setColor(Color.RED);     g2.draw(large);
        g2.setColor(Color.GREEN);   g2.draw(smallCC);
        
-       
+	*/
     }
     
 
