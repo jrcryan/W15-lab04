@@ -19,7 +19,8 @@ import edu.ucsb.cs56.w15.drawings.utilities.GeneralPathWrapper;
 /**
  * A class with static methods for drawing various pictures
  * 
- * @author Phill Conrad 
+ * @author Phill Conrad
+ * @author Brent Kirkland 
  * @version for CS10, lab06, Spring 2009
  */
 
@@ -74,32 +75,32 @@ public class AllMyDrawings
     }
 
 
-    /** Draw a picture with a few houses and coffee cups
+    /** Draw a picture with a Pizzas
      */
     public static void drawPicture2(Graphics2D g2) {
 
-	// Draw some coffee cups.
+	// Draw some Pizzas.
 	
-	CoffeeCup large = new CoffeeCup(100,50,225,150);
-	CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
-	CoffeeCup tallSkinny = new CoffeeCup(20,150,20,40);
-	CoffeeCup shortFat = new CoffeeCup(20,250,40,20);
+	Pizza large = new Pizza(100,50,225,150);
+	Pizza small = new Pizza(20,50,40,30);
+	Pizza tallSkinny = new Pizza(20,150,20,40);
+	Pizza shortFat = new Pizza(20,250,40,20);
 	
 	g2.setColor(Color.RED);     g2.draw(large);
-	g2.setColor(Color.GREEN);   g2.draw(smallCC);
+	g2.setColor(Color.GREEN);   g2.draw(small);
 	g2.setColor(Color.BLUE);    g2.draw(tallSkinny);
 	g2.setColor(Color.MAGENTA); g2.draw(shortFat);
 	
-	House p1 = new House(100,250,50,75);
+	Pizza p1 = new Pizza(100,250,50,75);
 	g2.setColor(Color.CYAN); g2.draw(p1);
 	
-	// Make a black house that's half the size, 
+	// Make a black pizza that's half the size, 
 	// and moved over 150 pixels in x direction
 	Shape p2 = ShapeTransforms.scaledCopyOfLL(p1,0.5,0.5);
 	p2 = ShapeTransforms.translatedCopyOf(p2,150,0);
 	g2.setColor(Color.BLACK); g2.draw(p2);
 	
-	// Here's a house that's 4x as big (2x the original)
+	// Here's a pizza that's 4x as big (2x the original)
 	// and moved over 150 more pixels to right.
 	p2 = ShapeTransforms.scaledCopyOfLL(p2,4,4);
 	p2 = ShapeTransforms.translatedCopyOf(p2,150,0);
@@ -116,7 +117,7 @@ public class AllMyDrawings
 	g2.setColor(new Color(0x002FA7)); 
 	g2.draw(p2); 
 	
-	// Draw two houses with Windows
+	// Draw two pizza with pepperonis
 	
 	PizzaWithPepperoni pp1 = new PizzaWithPepperoni(50,350,40,75);
 	PizzaWithPepperoni pp2 = new PizzaWithPepperoni(200,350,200,100);
@@ -124,7 +125,7 @@ public class AllMyDrawings
 	g2.draw(pp1);
 	g2.setColor(new Color(0x8F00FF)); 
 
-	// Rotate the second house 45 degrees around its center.
+	// Rotate the second pizza 45 degrees around its center.
 	Shape pp3 = ShapeTransforms.rotatedCopyOf(pp2, Math.PI/4.0);
 
 	g2.draw(pp3);
@@ -136,7 +137,7 @@ public class AllMyDrawings
 	g2.drawString("A bunch of Pizzas by Brent Kirkland", 20,20);
     }
   
-    /** Draw a different picture with a few houses and coffee cups
+    /** Draw a different picture with a few different pizzas
      */
 
     public static void drawPicture3(Graphics2D g2) {
@@ -146,13 +147,13 @@ public class AllMyDrawings
 	g2.drawString("A bunch of Pizzas by Brent Kirkland", 20,20);
 
 	
-	// Draw some coffee cups.
+	// Draw some Pizzas.
 	
-       CoffeeCup large = new CoffeeCup(100,50,225,150);
-       CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
+       Pizza large = new Pizza(100,50,225,150);
+       Pizza small = new Pizza(20,50,40,30);
        
        g2.setColor(Color.RED);     g2.draw(large);
-       g2.setColor(Color.GREEN);   g2.draw(smallCC);
+       g2.setColor(Color.GREEN);   g2.draw(small);
        
        
     }
