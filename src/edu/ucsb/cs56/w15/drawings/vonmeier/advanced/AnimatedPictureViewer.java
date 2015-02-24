@@ -8,14 +8,17 @@ public class AnimatedPictureViewer {
 
     private DrawPanel panel = new DrawPanel();
     
-    private Tree tree = new Tree(100, 100, 200, 300);
+    private Tree tree = new Tree(100, 100, 300, 300);
+    private Balls balls = new Balls(100, 100, 300, 300);
     
     Thread anim;
     
     private int x = 100;
     private int y = 100;
+    private int x2 = 300;
+    private int y2 = 300;
     
-    private int dx = 5;
+    private int dy = 5;
 
     public static void main (String[] args) {
       new AnimatedPictureViewer().go();
@@ -57,10 +60,12 @@ public class AnimatedPictureViewer {
           g2.setColor(Color.white);
           g2.fillRect(0,0,this.getWidth(), this.getHeight());
 
-          // Draw the Ipod
-          g2.setColor(Color.GREEN);
-          Tree test = new Tree(x, y, 200,300);
+          // Draw the Balls
+          g2.setColor(Color.BLACK);
+          Tree test = new Tree(100, 100, 300,300);
+          Balls test2 = new Balls(x, y, x2,y2);
           g2.draw(test);
+          g2.draw(test2);
        }
     }
     
@@ -70,10 +75,12 @@ public class AnimatedPictureViewer {
           while (true) {
             // Bounce off the walls
 
-            if (x >= 400) { dx = -5; }
-            if (x <= 50) { dx = 5; }
-            
-            x += dx;                
+            if (y2 >= 700) { dy = -5; }
+            if (y2 <= 300) { dy = 5; }
+
+            y2 += dy; 
+            y-=dy*.8;
+                         
             panel.repaint();
             Thread.sleep(50);
           }

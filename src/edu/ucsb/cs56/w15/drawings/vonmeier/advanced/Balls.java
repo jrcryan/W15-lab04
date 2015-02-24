@@ -34,11 +34,7 @@ public class Balls extends GeneralPathWrapper implements Shape
        @param width width of the tree
        @param height of tree (including stump and branches)
      */
-    public Balls(double x, double y, double width, double height){
-    
-		/**
-		 * Constructor for objects of class Balls
-		 */
+
 		public Balls(double x, double y, double width, double height)
 		{
 
