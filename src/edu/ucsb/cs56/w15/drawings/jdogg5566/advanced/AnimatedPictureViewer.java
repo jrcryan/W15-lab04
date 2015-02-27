@@ -5,6 +5,12 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
+
+/**
+A class that utilizes the Sweatshirt.java class and creates an animation with it. Currently, the animation moves up, down, left, and right, and also changes color as it moves.
+
+ */
+
 public class AnimatedPictureViewer {
 
     private DrawPanel panel = new DrawPanel();
