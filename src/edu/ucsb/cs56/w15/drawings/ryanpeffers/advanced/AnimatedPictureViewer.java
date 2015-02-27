@@ -70,9 +70,10 @@ public class AnimatedPictureViewer {
       public void run() {
         try {
           while (true) {
-            // Bounce off the walls
+            // Start the car moving from left to right then teleport
+	    // back to the start
 
-            if (x >= 400) { dx = -351; }
+            if (x >= 400) { dx = -375; }
             if (x <= 50) { dx = 5; }
             
             x += dx;                
