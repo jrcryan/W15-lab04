@@ -1,0 +1,126 @@
+package edu.ucsb.cs56.w15.drawings.jillfarnsworth.advanced;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class AnimatedPictureViewer extends JFrame {
+    // private DrawPanel panel = new DrawPanel();
+    // private Shape fish = new FishWithFins(500, 400, 50, 30);
+    
+    Thread anim; 
+    AnimatedPictureComponent component;
+    static final double startingX = 400;
+    static final double startingY = 400;
+    static final double speed = 1.6;
+    static final double startingWidth = 150;
+    static final double startingHeight = 90;
+    static final double swimSpeed = 0.7;
+
+    public AnimatedPictureViewer() {
+	setSize(500,500);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	component = new AnimatedPictureComponent(startingX, startingY, speed, swimSpeed, startingWidth, startingHeight);
+        add(component);
+	getContentPane().addMouseListener(new MouseAdapter() {
+	    public void mouseEntered(MouseEvent e) {
+		anim = new Animate();
+		anim.start();
+	    }
+	    public void mouseExited(MouseEvent e) {
+		anim.interrupt();
+		while (anim.isAlive()){}
+		anim = null;
+	    }
+	} );
+	setVisible(true);
+    }
+
+    public static void main(String[] args) {
+	AnimatedPictureViewer apv = new AnimatedPictureViewer();
+    }
+
+    class Animate extends Thread {
+	public void run() {
+	    try {
+		while(true) {
+		    display(20);
+		}
+	    } catch(Exception ex) {
+		if (ex instanceof InterruptedException) {}
+		else {
+		    ex.printStackTrace();
+		    System.exit(1);
+		}
+	    }
+	}
+
+	void display(int delay) throws InterruptedException {
+	    component.repaint();
+	    if (Thread.currentThread().interrupted())
+		throw(new InterruptedException());
+	    Thread.currentThread().sleep(delay);
+	}
+    }
+
+
+    /*
+    public static void main(String[] args) {
+	new AnimatedPictureViewer().go();
+    }
+
+    public void go() {
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	frame.getContentPane().add(panel);
+	frame.setSize(640,480);
+	frame.setVisible(true);
+
+	frame.getContentPane().addMouseListener(new MouseAdapter() {
+	    public void mouseEntered(MouseEvent e) {
+		anim = new Animation();
+		anim.start();
+	    }
+	    pubic void mouseExited(MouseEvent e) {
+		anim.interrupt();
+		while (anim.isAlive()){}
+		anim = null;
+		panel.repaint();
+	    }
+	} );
+    }
+
+    class DrawPanel extends JPanel {
+	public void paintComponent(Graphics g) {
+	    Graphics2D g2 = (Graphics2D) g;
+	    g2.setColor(Color.blue);
+	    g2.fillRect(0,0, this.getWidth(), this.getHeight());
+	    g2.setColor(Color.ORANGE);
+	    FishWithFins newfish = new FishWithFins(x, y, 50, 30);
+	    g2.draw(newfish);
+	}
+    }
+
+    class Animation extends Thread {
+	public void run() {
+	    try {
+		while (true) {
+		    if (x>=500 && y>=400) 
+			displacement = -5;
+
+		    
+		   
+		}
+	    } catch (Exception ex) {
+		if (ex instanceof InterruptedException) {
+		} else {
+		    ex.printStackTrace();
+		    System.exit(1);
+		}
+	    }
+	}
+    }
+    */
+
+}
